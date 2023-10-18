@@ -1,6 +1,6 @@
 Custom Shell - "Custom_shell"
 
-Custom_shell is a minimalistic, yet powerful shell developed in C by [Your Name] and [Your Partner's Name]. It's designed for those who appreciate simplicity and customizability in a command-line interface. Whether you're a developer, a system administrator, or just a curious enthusiast, Custom_SHell provides a clean slate for you to make your shell experience truly your own.
+Custom_shell is a minimalistic, yet powerful shell developed in C by ABDULBASIT IBRAHIM and RAPHAEL ADEGOKE. It's designed for those who appreciate simplicity and customizability in a command-line interface. Whether you're a developer, a system administrator, or just a curious enthusiast, Custom_SHell provides a clean slate for you to make your shell experience truly your own.
 
 
 Features
