@@ -10,7 +10,7 @@
 
 int start_shell(char **env, char **argv)
 {
-	int argc = 0, i = 0;
+	int argc = 0;
 	ssize_t char_count;
 	size_t char_size = 0;
 	char *buffer = NULL, *buffer_copy, *token, *delim = " \n";
@@ -19,7 +19,7 @@ int start_shell(char **env, char **argv)
 	while (true)
 	{
 		show_shell_name();
-		char_count = my_getline(&buffer, &char_size, stdin);
+		char_count = getline(&buffer, &char_size, stdin);
 		exit_with_ctrl_D(char_count, buffer);
 
 		buffer_copy = strdup(buffer);
