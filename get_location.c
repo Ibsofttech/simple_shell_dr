@@ -29,6 +29,7 @@ char *location(char *path, char *arg)
 		}
 		route_token = strtok(NULL, delim);
 	}
+		free(file_route);
 		return (NULL);
 }
 

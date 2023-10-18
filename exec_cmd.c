@@ -21,6 +21,8 @@ void exit_cmd(char *buffer, char *buffer_copy)
 
 void cd_cmd(int argc, char **argv)
 {
+	char new_pwdir[1024];
+	
 	if (argc == 1 || strcmp(argv[1], "~") == 0)
 		chdir(getenv("HOME"));
 
@@ -40,7 +42,6 @@ void cd_cmd(int argc, char **argv)
 			perror("cd");
 
 	}
-	char new_pwdir[1024];
 
 	getcwd(new_pwdir, sizeof(new_pwdir));
 	setenv("PWD", new_pwdir, 1);

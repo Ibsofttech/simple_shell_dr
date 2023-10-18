@@ -10,6 +10,7 @@
 
 int main(int c, char **argv, char **env)
 {
+	(void)c;
 	start_shell(env, argv);
 	return (0);
 }
