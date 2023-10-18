@@ -60,20 +60,20 @@ void special_cmd(char **argv_c, char *buf, char *buf_cpy, char **env)
 {
 	int exit_code = 0;
 
-	if (strncmp(argv_c[0], "exit", 5) == 0)
+	if (_strncmp(argv_c[0], "exit", 5) == 0)
 	{
 		exit_code = atoi(argv_c[0] + 5);
 		free(buf);
 		free(buf_cpy);
 		exit(exit_code);
 	}
-	else if (strcmp(argv_c[0], "exit") == 0)
+	else if (_strcmp(argv_c[0], "exit") == 0)
 	{
 		free(buf);
 		free(buf_cpy);
 		exit(exit_code);
 	}
-	else if (strcmp(argv_c[0], "env") == 0)
+	else if (_strcmp(argv_c[0], "env") == 0)
 	{
 		print_env(env);
 	}

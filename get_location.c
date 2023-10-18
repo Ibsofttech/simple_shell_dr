@@ -18,10 +18,10 @@ char *location(char *path, char *arg)
 
 	while (route_token)
 	{
-		strcpy(file_route, route_token);
-		strcat(file_route, "/");
-		strcat(file_route, arg);
-		strcat(file_route, "\0");
+		str_cpy(file_route, route_token);
+		_strcat(file_route, "/");
+		_strcat(file_route, arg);
+		_strcat(file_route, "\0");
 
 		if (access(file_route, X_OK) == 0)
 		{
@@ -61,7 +61,7 @@ char *get_path(char **argv_copy)
 	char *route;
 
 	route = get_location(argv_copy[0]);
-	if (route == NULL && strncmp(argv_copy[0], "/", 1) == 0)
+	if (route == NULL && _strncmp(argv_copy[0], "/", 1) == 0)
 	route = argv_copy[0];
 
 	return (route);

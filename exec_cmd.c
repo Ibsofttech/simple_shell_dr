@@ -26,7 +26,7 @@ void cd_cmd(int argc, char **argv)
 	if (argc == 1 || strcmp(argv[1], "~") == 0)
 		chdir(getenv("HOME"));
 
-	else if (strcmp(argv[1], "-") == 0)
+	else if (_strcmp(argv[1], "-") == 0)
 	{
 		char *prev_dir = getenv("OLDPWD");
 

@@ -27,7 +27,8 @@ int start_shell(char **env, char **argv)
 		token = my_strtok(buffer_copy, delim);
 		while (token)
 		{
-			argv_copy[argc] = token;
+			argv_copy[argc] = malloc(sizeof(char) * (_strlen(token + 1)));
+			str_cpy(argv_copy[argc], token);
 			token = my_strtok(NULL, delim);
 			argc++;
 		}
@@ -38,7 +39,7 @@ int start_shell(char **env, char **argv)
 			continue;
 		}
 		special_cmd(argv_copy, buffer, buffer_copy, env);
-		if (strcmp(argv_copy[0], "cd") == 0)
+		if (_strcmp(argv_copy[0], "cd") == 0)
 		{
 			cd_cmd(argc, argv_copy);
 			continue;
