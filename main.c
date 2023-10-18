@@ -3,7 +3,7 @@
 /**
  * main - entry to my shell
  * @c: number of main argument
- * @aargv: argument vectors
+ * @argv: argument vectors
  * @env: environmental variables
  * Return: Success(0)
  */

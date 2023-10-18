@@ -7,9 +7,10 @@
  * Return: pointer to the tokenised string
  */
 
-char *my_strtok(char *string, const char *delimeter) {
+char *my_strtok(char *string, const char *delimeter)
+{
 	static char *location;
-    char *token;
+	char *token;
 
 	if (string != NULL)
 		location = string;
@@ -21,7 +22,7 @@ char *my_strtok(char *string, const char *delimeter) {
 		location++;
 
 	if (*location == '\0')
-    {
+	{
 		location = NULL;
 		return (NULL);
 	}
@@ -31,11 +32,11 @@ char *my_strtok(char *string, const char *delimeter) {
 		location++;
 
 	if (*location)
-    {
+	{
 		*location = '\0';
 		location++;
 	}
-    else
+	else
 		location = NULL;
 
 	return (token);

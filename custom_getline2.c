@@ -9,12 +9,13 @@
  */
 
 
-ssize_t my_getline(char **buffer, size_t *buffer_size, FILE *input) {
+ssize_t my_getline(char **buffer, size_t *buffer_size, FILE *input)
+{
 	if (buffer == NULL || buffer_size == NULL || input == NULL)
 		return (-1);
 
 	if (*buffer == NULL)
-    {
+	{
 		*buffer_size = 128;
 		*buffer = (char *)malloc(*buffer_size);
 		if (*buffer == NULL)
@@ -25,23 +26,23 @@ ssize_t my_getline(char **buffer, size_t *buffer_size, FILE *input) {
 	int character;
 
 	while (true)
-    {
+	{
 		character = getc(input);
 
 		if (character == EOF)
 			break;
 
 		if (char_count + 1 >= *buffer_size)
-        {
+		{
 			*buffer_size *= 2;
 			char *new_line = (char *)malloc(*buffer_size);
+
 			if (new_line == NULL)
 				return (-1);
 
 
 			for (size_t i = 0; i < char_count; i++)
 				new_line[i] = (*buffer)[i];
-			
 
 			free(*buffer);
 			*buffer = new_line;
@@ -50,7 +51,7 @@ ssize_t my_getline(char **buffer, size_t *buffer_size, FILE *input) {
 		(*buffer)[char_count++] = (char)character;
 
 		if (character == '\n')
-        {
+		{
 			(*buffer)[char_count] = '\0';
 			return (char_count);
 		}

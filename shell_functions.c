@@ -14,11 +14,12 @@ void exec_cmd(char **argv_c, char *buf, char *buf_c, char **env, char **argv)
 {
 		pid_t child_pid;
 		char *route = get_path(argv_c);
+
 		if (route == NULL)
-        {
-            perror(argv_c[0]);
-            exit(EXIT_FAILURE);
-        }
+		{
+			perror(argv_c[0]);
+			exit(EXIT_FAILURE);
+		}
 		child_pid = fork();
 
 		if (child_pid < 0)
@@ -58,7 +59,7 @@ void special_cmd(char **argv_c, char *buf, char *buf_cpy, char **env)
 	if (strncmp(argv_c[0], "exit", 5) == 0)
 	{
 		exit_code = atoi(argv_c[0] + 5);
-        free(buf);
+		free(buf);
 		free(buf_cpy);
 		exit(exit_code);
 	}
