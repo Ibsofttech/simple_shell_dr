@@ -14,7 +14,7 @@ void exec_cmd(char **argv_c, char *buf, char *buf_c, char **env, char **argv)
 {
 		pid_t child_pid;
 		char *route = get_path(argv_c);
-		
+
 		(void)buf;
 		(void)buf_c;
 

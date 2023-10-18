@@ -22,7 +22,7 @@ void exit_cmd(char *buffer, char *buffer_copy)
 void cd_cmd(int argc, char **argv)
 {
 	char new_pwdir[1024];
-	
+
 	if (argc == 1 || strcmp(argv[1], "~") == 0)
 		chdir(getenv("HOME"));
 
